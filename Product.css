@@ -216,6 +216,8 @@ header > *{
 #shoppingCart h2{
     padding: 20px;
     background-color: var(--cart-menu-color);
+    font-size: 1.2rem;
+    white-space: nowrap;
 }
 #shoppingCart .name{
     width: 100px;
