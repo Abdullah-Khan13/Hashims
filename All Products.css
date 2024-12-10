@@ -238,10 +238,6 @@ header {
     width: 400px;
     grid-template-rows: 70px 1fr 70px;
 }
-#shoppingCart h2{
-    font-size: 1.2rem;
-    white-space: nowrap;
-}
 @media (max-width:880px){
     #secondLine{
         display: none;
@@ -317,6 +313,8 @@ header {
 #shoppingCart h2{
     padding: 20px;
     background-color: var(--cart-menu-color);
+    font-size: 1.2rem;
+    white-space: nowrap;
 }
 #shoppingCart .name{
     width: 100px;
