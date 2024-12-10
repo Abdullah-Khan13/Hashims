@@ -352,6 +352,7 @@ header > *{
 @media (max-width:650px){
     .hero{
         font-size: 1.1em;
+        background-image: url("Img/hero_2bg.jpg");
     }
 }
 .title{
