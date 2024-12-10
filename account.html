@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="account.css">
+    <script src="https://kit.fontawesome.com/154e358e66.js" crossorigin="anonymous"></script>
+    <title>Hashim's|E-commerce</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="emoji"><i class="fa fa-shopping-cart" alt="Cart"></i></span>
+            <p class="text">Hashim's</p>
+        </div>
+        <nav>
+            <ul id="main-menu">
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="All Products.html" target="_blank">Shop</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="" method="post" id="SignIn">
+            <h1>Sign In</h1>
+            <div class="inputContainer">
+                <input type="text" name="name" id="name" placeholder=" " required>
+                <label for="name">Your Username</label>
+            </div>
+            <div class="inputContainer">
+                <input type="email" name="email" id="email" placeholder=" " required>
+                <label for="email">Email Address</label>
+            </div>
+            <div class="inputContainer">
+                <input type="password" name="Pword" id="Pword" placeholder=" " required>
+                <label for="Pword">Password</label>
+            </div>
+            <input type="submit" value="Sign In" class="submitBtn">
+            <p>Don't have an account?</p>
+        </form>
+        <form action="" method="post" id="Register">
+            <h1>Register</h1>
+            <div class="inputContainer">
+                <input type="text" name="fname" id="fname" placeholder=" " required>
+                <label for="fname">First Name</label>
+            </div>
+            <div class="inputContainer">
+                <input type="text" name="lname" id="lname" placeholder=" " required>
+                <label for="lname">Last Name</label>
+            </div>
+            <div class="inputContainer">
+                <input type="email" name="email" id="email" placeholder=" " required>
+                <label for="email">Email Address</label>
+            </div>
+            <div class="inputContainer">
+                <input type="password" name="Pword" id="Pword" placeholder=" " required>
+                <label for="Pword">Create Password</label>
+            </div>
+            <input type="submit" value="Register" class="submitBtn">
+            <p>Already made an account?</p>
+        </form>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div id="purpose">
+                <h3><span class="logo">🛒Hashim's</span></h3>
+                <p><small>Our purpose is to provide home appliances that will fit our customers needs and wants. To make sure our customers leave happily.</small></p>
+            </div>
+            <ul class="footer-ul">
+                <h3 class="Useful-links">Useful links</h3>
+                <li><a href="#" class="footer-list-item">Coupons?</a></li>
+                <li><a href="#" class="footer-list-item">Blog Post</a></li>
+                <li><a href="#" class="footer-list-item">Return Policy</a></li>
+                <li><a href="#" class="footer-list-item">Join Affliate</a></li>
+            </ul>
+            <ul class="footer-ul">
+                <h3 class="Contact-Us">Follow Us</h3>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-youtube"></i>Youtube</a></li>
+            </ul>
+        </div>
+        <div class="footer-coupons">
+            <h2>Exclusive Coupons</h2>
+            <p>Save on your next purchase with our special offers!</p>
+            <div class="coupon">
+                <div class="coupon-code">
+                    <h3>10% OFF on Your First Order</h3>
+                    <p>Use Code: <strong>WELCOME10</strong></p>
+                </div>
+                <button class="copy-button" onclick="copyCode('WELCOME10')">Copy Code</button>
+            </div>
+            <div class="coupon">
+                <div class="coupon-code">
+                    <h3>$50 OFF on Orders Over $500</h3>
+                    <p>Use Code: <strong>SAVE50</strong></p>
+                </div>
+                <button class="copy-button" onclick="copyCode('SAVE50')">Copy Code</button>
+            </div>
+            <div class="coupon">
+                <div class="coupon-code">
+                    <h3>Free Shipping on Orders Over $100</h3>
+                    <p>No Code Needed!</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+        <hr>
+        <p id="copyright">Copyright© 2024 🛒Hashim's</p>
+        </div>   
+    </footer>
+    <script>
+        const registerFormGetter = document.querySelector("#SignIn p");
+        const signInFormGetter = document.querySelector("#Register p");
+        const signInForm = document.getElementById("SignIn");
+        const registerForm = document.getElementById("Register");
+        registerFormGetter.addEventListener("click", () => {
+            signInForm.style.display = "none";
+            registerForm.style.display = "flex";
+        });
+        signInFormGetter.addEventListener("click", () => {
+            registerForm.style.display = "none";
+            signInForm.style.display = "flex";
+        });
+    </script>
+</body>
+</html>

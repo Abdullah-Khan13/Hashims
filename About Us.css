@@ -1,0 +1,429 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:hsl(200, 100%, 70%);
+    --menu-color:hsla(240, 100%, 50%, 0.5);
+    --cart-menu-color:hsl(200, 100%, 50%);
+}
+body{
+    scroll-behavior: smooth;
+    background-color: white;
+}
+#promoLine{
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: hidden;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    --gap: 100px;
+    gap: var(--gap);
+}
+#promoLine h3 {
+    animation: slider 10s infinite linear;
+    display: inline-block;
+}
+@keyframes slider {
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+header {
+    width: 100%;
+    height: auto;
+    background-color: var(--main-color);
+    padding: 10px 0;
+    box-shadow: 0px 1px 1px hsla(0, 0%, 0%, 0.199);
+}
+header, #promoLine{
+    position: relative;
+    z-index: 1;
+}
+#main-menu{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#main-menu li,a{
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    color: white;
+    padding: 3px 10px; 
+}
+#main-menu li {
+    position: relative;
+}
+#main-menu li::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: white; 
+    transition: width 0.3s ease; 
+}
+#main-menu li:hover::after {
+    width: 100%;
+}
+.activePageLink{
+    color: var(--cart-menu-color);
+}
+.activePageLink::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white; 
+    transition: width 0.3s ease;
+}
+.title{
+    border-bottom: 3px solid black;
+    width: 50%;
+    margin-bottom: 5px;
+    text-align: center;   
+}
+#webPageTitle{
+    margin: 20px auto;
+    text-align: center;
+}
+#hero{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    gap: 1rem;
+    background-color: var(--main-color);
+    padding-top: 30px;
+}
+#heroLogo{
+    font-size: 2rem;
+    display: flex;
+}
+#heroEmoji{
+    display: inline-block;
+    transform: translateX(100%) scaleX(-1);
+    animation: rollout 1s linear forwards;
+    font-size: 2em;
+    margin-top: 10px;
+}
+@keyframes rollout{
+    to{
+        transform: translateX(0%) scaleX(-1);
+    }
+}
+#heroLogo h1 span{
+    opacity: 0;
+    animation: appear 0.5s linear forwards;
+    animation-delay: 2s;
+}
+@keyframes appear{
+    to{
+        opacity: 1;
+    }
+}
+#heroLogo h1 span:nth-child(1){
+    animation-delay: 1s;
+}
+#heroLogo h1 span:nth-child(2){
+    animation-delay: 1.5s;
+}
+#heroLogo h1 span:nth-child(3){
+    animation-delay: 2s;
+}
+#heroLogo h1 span:nth-child(4){
+    animation-delay: 2.5s;
+}
+#heroLogo h1 span:nth-child(5){
+    animation-delay: 3s;
+}
+#heroLogo h1 span:nth-child(6){
+    animation-delay: 3.5s;
+}
+#heroLogo h1 span:nth-child(7){
+    animation-delay: 4s;
+}
+#heroSlogan h3 span{
+    opacity: 0;
+    animation: appear 0.5s linear forwards;
+    animation-delay: 2s;
+}
+#heroSlogan h3 span:nth-child(2){
+    animation-delay: 2.5s;
+}
+#hero #aboutUs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60vh;
+    margin: 30px auto;
+    margin-bottom: 0;
+    font-weight: bold;
+    background-image: url("Img/about us 1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#hero #aboutUs .content{
+    width: 40%;
+    height: 50%;
+    margin: auto;
+    font-weight: bold;
+    line-height: 1.2rem;
+}
+#hero .content h2{
+    margin: 10px auto;
+}
+@media (max-width:800px){
+    #hero #aboutUs .content{
+        width: 60%;
+        height: 80%;
+        margin: auto;
+    }   
+}
+#secondaryInfo{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px 0;
+}
+#secondaryInfo img{
+    width: 450px;
+    height: 350px;
+    overflow: hidden;
+}
+#secondaryInfo .content{
+    width: 60%;
+    height: 450px;
+    margin: auto;
+    padding: 0 10px;
+}
+#secondaryInfo1, #secondaryInfo2{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 90%;
+    margin: 50px auto;
+}
+#secondaryInfo2 img{
+    width: 550px;
+    height: 350px;
+    margin: 0 20px;
+}
+.line{
+    background-color: grey;
+    border-radius: 50%;
+    height: 2px;
+    width: 300px;
+    margin: 0 10px;
+    margin-bottom: 100px;
+}
+@media (max-width:1000px){
+    #heroLogo{
+        margin-top: 50px;
+        font-size: 1.5rem;
+    }
+    #hero #aboutUs{
+        flex-direction: column;
+    }
+    #hero #aboutUs img{
+        width: 80%;
+        height: 50%;
+    }
+    #secondaryInfo1, #secondaryInfo2{
+        width: 70%;
+        flex-direction: column;
+    }
+    #secondaryInfo img{
+        width: 100%;
+        height: 50%;
+        margin: auto;
+    }
+    #secondaryInfo .content{
+        width: 100%;
+        height: 50%;
+        margin: 10px auto;
+    }
+}
+@media (max-width:680px){
+    .title{
+        width: 60%;
+    }
+    #hero #aboutUs img{
+        width: 90%;
+        height: 50%;
+    }
+}
+#CTA{
+    padding: 30px 0;
+    background-color: var(--main-color);
+}
+#CTA .content{
+    width: 60%;
+    margin: auto;
+}
+#CTA .content h3{
+    margin: 20px auto;
+    text-align: center;
+}
+#contact a{
+    color: blue;
+    text-decoration: underline 3px white;
+    padding: 0;
+}
+#CTA #productsLinkContainer{
+    width: 90%;
+    margin:  20px auto;
+    position: relative;
+}
+#CTA #productsLinkContainer img{
+    width: 100%;
+}
+#CTA #productsLinkContainer #overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: hsla(0, 0%, 0%, 0.200);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+#CTA #productsLinkContainer #overlay:hover{
+    opacity: 1;
+}
+#CTA #productsLinkContainer p{
+    display: none;
+    text-align: center;
+}
+@media (max-width:600px){
+    #CTA .content{
+        width: 80%;
+    }
+    #CTA #productsLinkContainer{
+        width: 100%;
+    }
+    #CTA #productsLinkContainer #overlay a{
+        font-size: 1.2rem;
+    }
+    #CTA #productsLinkContainer p{
+        display: block;
+    }
+}
+footer {
+    color: grey;
+    background-color: black;
+    margin: 0 auto;
+    padding: 50px 30px; 
+}
+#purpose{
+    width: 150px;
+}
+#purpose h3{
+    white-space: nowrap;
+}
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 3rem; 
+    margin: 30px auto;
+    width: 80%;
+    font-size: 1.2rem;
+}
+#footer-copyright {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.footer-ul {
+    list-style-type: none; 
+    padding: 0;
+    text-align: center;
+}
+footer h3 {
+    font-weight: bold; 
+    font-size: 1.5em;
+}
+.footer-list-item{
+    margin-bottom: 5px;
+    color: grey; 
+}
+.footer-list-item:hover{
+    color: white;
+}
+.footer-coupons {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.footer-coupons h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.footer-coupons p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.coupon {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.coupon-code h3 {
+    margin: 0;
+}
+.copy-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.copy-button:hover {
+    background-color: #0056b3;
+}
+@media (max-width:600px){
+    .footer-content{
+        margin: auto;
+    }
+    .footer-content > *{
+        margin: 20px auto;
+    }
+    .footer-coupons{
+        width: 100%;
+    }
+}
+@media (max-width:550px){
+    .footer-content{
+        flex-direction: column;
+    }
+}

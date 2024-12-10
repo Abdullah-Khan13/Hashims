@@ -1,0 +1,437 @@
+[
+    {
+        "id": 1,
+        "name": "Toaster",
+        "image": "Img/toaster.jpg",
+        "previous_price": 60,
+        "final_price": 45,
+        "isLatest": "True",
+        "rating": 5,
+        "description": "Elevate your breakfast game with our 6-Slice Stainless Steel Toaster, designed for both home and commercial use. With a powerful 1680W heating element, this toaster ensures your bread is toasted to perfection every time. Whether you're preparing breakfast for the family or serving customers in a bustling café, this toaster meets all your needs with ease.",
+        "category": "Kitchen Appliances",
+        "link": "Product1.html",
+        "sideImages": [
+            "Img/toaster.jpg",
+            "Img/toaster2.jpg",
+            "Img/Toaster3.jpg",
+            "Img/Toaster5.png"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Iron",
+        "image": "Img/Electric iron.png",
+        "previous_price": 70,
+        "final_price": 52.5,
+        "isLatest": "True",
+        "rating": 5,
+        "category": "Cleaning Appliances"
+    },
+    {
+        "id": 3,
+        "name": "Oven",
+        "image": "Img/Oven.png",
+        "previous_price": 200,
+        "final_price": 150,
+        "isLatest": "True",
+        "rating": 5,
+        "category": "Kitchen Appliances"
+    },
+    {
+        "id": 4,
+        "name": "Shaver / Trimer",
+        "image": "Img/shaver-4840_640-removebg-preview.png",
+        "previous_price": 25,
+        "final_price": 18.75,
+        "isLatest": "True",
+        "rating": 5,
+        "category": "Home Comfort"
+    },
+    {
+        "id": 5,
+        "name": "Air Conditioner",
+        "image": "Img/Air Conditioner.png",
+        "previous_price": 400,
+        "final_price": 300,
+        "isPopular": "True",
+        "rating": 5,
+        "category": "Home Comfort"
+    },
+    {
+        "id": 6,
+        "name": "Air Fryer",
+        "image": "Img/Air Fryer.jpg",
+        "previous_price": 70,
+        "final_price": 52.5,
+        "isPopular": "True",
+        "rating": 5,
+        "category": "Kitchen Appliances"
+    },
+    {
+        "id": 7,
+        "name": "Coffee Maker",
+        "image": "Img/Coffee Maker.jpg",
+        "previous_price": 50,
+        "final_price": 37.5,
+        "isPopular": "True",
+        "rating": 5,
+        "category": "Kitchen Appliances"
+    },
+    {
+        "id": 8,
+        "name": "Dishwasher",
+        "image": "Img/Dishwasher.png",
+        "previous_price": 500,
+        "final_price": 375,
+        "isPopular": true,
+		"rating" :	5,
+		"category" :	"Kitchen Appliances"
+    },
+    {
+      	"id" : 9, 
+      	"name" :	"Electric Kettle", 
+      	"image" :	"Img/Electric Kettle.jpg", 
+      	"previous_price" :	50, 
+      	"final_price" :	37.5, 
+      	"isPopular" :	true, 
+      	"rating" :	5, 
+      	"category" :	"Smart Appliance"
+   },
+   {
+      	"id" : 10, 
+      	"name" :	"Refrigerator", 
+      	"image" :	"Img/Fridge.jpg", 
+      	"previous_price" :	900, 
+      	"final_price" :	675, 
+      	"isPopular" :	true, 
+      	"rating" :	5, 
+      	"category" :	"Kitchen Appliances"
+   },
+   {
+    "id": 11,
+    "name": "Vacuum Cleaner",
+    "image": "Img/Vacuum Cleaner.jpeg",
+    "previous_price": 150,
+    "final_price": 112.5,
+    "isPopular": "True",
+    "rating": 5,
+    "category": "Cleaning Appliances"
+},
+{
+    "id": 12,
+    "name": "Washing Machine",
+    "image": "Img/Washing Machine.jpg",
+    "previous_price": 550,
+    "final_price": 412.5,
+    "isPopular": "True",
+    "rating": 5,
+    "category": "Cleaning Appliances"
+},
+{
+    "id": 13,
+    "name": "Blender",
+    "image": "Img/Blender.jpg",
+    "previous_price": 40,
+    "final_price": 30,
+    "rating": 5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 14,
+    "name": "Slow Cooker",
+    "image": "Img/Slow Cooker.jpg",
+    "previous_price": 80,
+    "final_price": 60,
+    "rating": 5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 15,
+    "name": "Food Processor",
+    "image": "Img/Food Processor.jpg",
+    "previous_price": 120,
+    "final_price": 90,
+    "rating": 5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 16,
+    "name": "Electric Griddle",
+    "image": "Img/Electric Griddle.jpg",
+    "previous_price": 60,
+    "final_price": 45,
+    "rating": 5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 17,
+    "name": "Stand Mixer",
+    "image": "Img/Stand Mixer.jpg",
+    "previous_price": 300,
+    "final_price": 225,
+    "rating": 5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 18,
+    "name": "Induction Cooktop",
+    "image": "Img/Induction Cooktop.jpg",
+    "previous_price": 150,
+    "final_price": 112.5,
+    "rating": 5,
+    "category": "Kitchen Appliances"
+},
+{
+     "id" : 19, 
+     "name" :	"Deep Fryer", 
+     "image" :	"Img/Deep Fryer.jpg", 
+     "previous_price" :	100, 
+     "final_price" :	75, 
+     "rating" :	5, 
+     "category" :	"Kitchen Appliances"
+},
+{
+     "id" : 20, 
+     "name" :	"Rice Cooker", 
+     "image" :	"Img/Rice Cooker.jpg", 
+     "previous_price" :	45, 
+     "final_price" :	33.75, 
+     "rating" :	5, 
+     "category" :	"Kitchen Appliances"
+
+},
+{
+    "id": 21,
+    "name": "Electric Pressure Cooker",
+    "image": "Img/Electric Pressure Cooker.jpg",
+    "previous_price": 90,
+    "final_price": 67.5,
+    "rating": 5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 22,
+    "name": "Steam Cleaner",
+    "image": "Img/Steam Cleaner.jpg",
+    "previous_price": 130,
+    "final_price": 97.5,
+    "rating": 5,
+    "category": "Cleaning Appliances"
+},
+{
+    "id": 23,
+    "name": "Air Purifier",
+    "image": "Img/Air Purifier.jpg",
+    "previous_price": 200,
+    "final_price": 150,
+    "rating": 5,
+    "category": "Home Comfort"
+},
+{
+    "id": 24,
+    "name": "Humidifier",
+    "image": "Img/Humidifier.jpg",
+    "previous_price": 50,
+    "final_price": 37.5,
+    "rating": 5,
+    "category": "Home Comfort"
+},
+{
+    "id": 25,
+    "name": "Smart Refrigerator",
+    "image": "Img/Smart_Refrigerator.jpg",
+    "previous_price": 1500,
+    "final_price": 1125,
+    "rating": 4.5,
+    "category": "Smart Appliances"
+},
+{
+    "id": 26,
+    "name": "Convection Oven",
+    "image": "Img/Convection_Oven.jpg",
+    "previous_price": 250,
+    "final_price": 187.5,
+    "rating": 4.5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 27,
+    "name": "Portable Dishwasher",
+    "image": "Img/Portable_Dishwasher.jpg",
+    "previous_price": 400,
+    "final_price": 300,
+    "rating": 4.5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 28,
+    "name": "Wine Cooler",
+    "image": "Img/Wine_Cooler.jpg",
+    "previous_price": 300,
+    "final_price": 225,
+    "rating": 4.5,
+    "category" : "Outdoor Appliances"
+},
+{
+     "id" : 29, 
+     "name" :	"Electric Can Opener", 
+     "image" :	"Img/Electric_Can_Opener.jpg", 
+     "previous_price" :	30, 
+     "final_price" :	22.5, 
+     "rating" :	4.5, 
+     "category" :	"Kitchen Appliances"
+},
+{
+     "id" : 30, 
+     "name" :	"Sous Vide Cooker", 
+     "image" :	"Img/Sous_Vide_Cooker.jpg", 
+     "previous_price" :	120, 
+     "final_price" :	90, 
+     "rating" :	4.5, 
+     "category" :	"Kitchen Appliances"
+},
+{
+    "id": 31,
+    "name": "Popcorn Maker",
+    "image": "Img/Popcorn_Maker.jpg",
+    "previous_price": 40,
+    "final_price": 30,
+    "rating": 4.5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 32,
+    "name": "Ice Maker",
+    "image": "Img/Ice_Maker.jpg",
+    "previous_price": 200,
+    "final_price": 150,
+    "rating": 4.5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 33,
+    "name": "Electric Wok",
+    "image": "Img/Electric_Wok.jpg",
+    "previous_price": 70,
+    "final_price": 52.5,
+    "rating": 4.5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 34,
+    "name": "Bread Machine",
+    "image": "Img/Bread_Machine.jpg",
+    "previous_price": 150,
+    "final_price": 112.5,
+    "rating": 4.5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 35,
+    "name": "Food Dehydrator",
+    "image": "Img/Food_Dehydrator.jpg",
+    "previous_price": 100,
+    "final_price": 75,
+    "rating": 4.5,
+    "category": "Kitchen Appliances"
+},
+{
+    "id": 36,
+    "name": "Countertop Pizza Oven",
+    "image": "Img/Countertop_Pizza_Oven.jpg",
+    "previous_price": 250,
+    "final_price": 187.5,
+    "rating": 4.5,
+    "category" :"Kitchen Appliances"
+},
+{
+     "id" : 37, 
+     "name" :	"NutriBullet Blender", 
+     "image" :	"Img/NutriBullet_Blender.jpg", 
+     "previous_price" :	80, 
+     "final_price" :	60, 
+     "rating" :	4.5, 
+     "category" :	"Kitchen Appliances"
+},
+{
+     "id" : 38, 
+     "name" :	"Electric Skillet", 
+     "image" :	"Img/Electric_Skillet.jpg", 
+     "previous_price" :	60, 
+     "final_price" :	45, 
+     "rating" :	4.5, 
+     "category" :	"Kitchen Appliances"
+},
+{
+     "id" : 39, 
+     "name" :	"Multi-Cooker", 
+     "image" :	"Img/Multi_Cooker.jpg", 
+     "previous_price" :	120, 
+     "final_price" :	90, 
+     "rating" :	4.5, 
+     "category" :	"KItchen Appliances"
+},
+{
+     "id" : 40, 
+     "name" :	"Juicer", 
+     "image" :	"Img/Juicer.jpg", 
+     "previous_price" :	90, 
+     "final_price" :	67.5, 
+     "rating" :	4.5, 
+     "category" :	"KItchen Appliances"
+},
+{
+        "id": 41,
+        "name": "Smart Coffee Maker",
+        "image": "Img/Smart_Coffee_Maker.jpg",
+        "previous_price": 150,
+        "final_price": 112.5,
+        "rating": 4.5,
+        "category": "Smart Appliances"
+},
+    {
+        "id": 42,
+        "name": "Electric Egg Cooker",
+        "image": "Img/Electric_Egg_Cooker.jpg",
+        "previous_price": 25,
+        "final_price": 18.75,
+        "rating": 4.5,
+        "category": "Kitchen Appliances"
+    },
+    {
+        "id": 43,
+        "name": "Hand Mixer",
+        "image": "Img/Hand_Mixer.jpg",
+        "previous_price": 40,
+        "final_price": 30,
+        "rating": 4.5,
+        "category": "Kitchen Appliances"
+    },
+    {
+        "id": 44,
+        "name": "Electric Peeler",
+        "image": "Img/Electric_Peeler.jpg",
+        "previous_price": 35,
+        "final_price": 26.25,
+        "rating": 4.5,
+        "category": "Kitchen Appliances"
+    },
+    {
+        "id": 45,
+        "name": "Coffee Grinder",
+        "image": "Img/Coffee_Grinder.jpg",
+        "previous_price": 50,
+        "final_price": 37.5,
+        "rating": 4.5,
+        "category": "Kitchen Appliances"
+    },
+    {
+     	"id" : 46, 
+     	"name" :	"Salad Spinner", 
+     	"image" :	"Img/Salad_Spinner.jpg", 
+     	"previous_price" :	20, 
+     	"final_price" :	15, 
+     	"rating" :	4.5, 
+     	"category" :	"Kitchen Appliances"
+   }
+]

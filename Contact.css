@@ -1,0 +1,325 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:hsl(200, 100%, 70%);
+    --menu-color:hsla(240, 100%, 50%, 0.5);
+    --cart-menu-color:hsl(200, 100%, 50%);
+}
+body{
+    scroll-behavior: smooth;
+    background-color: white;
+}
+#promoLine{
+    background-color: red;
+    color: white;
+    width: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow-x: hidden;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    --gap: 100px;
+    gap: var(--gap);
+}
+#promoLine h3 {
+    animation: slider 10s infinite linear;
+    display: inline-block;
+}
+@keyframes slider {
+    to {
+        transform: translateX(calc(-100% - var(--gap)));
+    }
+}
+header {
+    width: 100%;
+    height: auto;
+    background-color: var(--main-color);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    padding: 10px 0;
+    box-shadow: 0px 1px 1px hsla(0, 0%, 0%, 0.2);
+}
+header > *{
+    margin: auto;
+}
+#main-menu{
+    display: flex;
+}
+#main-menu li,a{
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    color: white;
+    padding: 3px 5px; 
+}
+#main-menu li {
+    position: relative;
+}
+#main-menu li::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: white; 
+    transition: width 0.3s ease; 
+}
+#main-menu li:hover::after {
+    width: 100%;
+}
+.activePageLink{
+    color: var(--cart-menu-color);
+}
+.activePageLink::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: white; 
+    transition: width 0.3s ease;
+}
+@media (max-width:800px){
+    header{
+        justify-content: space-around;
+        flex-direction: column;
+    }
+}
+#hero{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 100px 50px;
+    background-color: var(--main-color);
+}
+#messageContainer{
+    width: 50%;
+    min-width: 350px;
+    background-color: white;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 10px;
+}
+#messageContainer:not(form){
+    text-align: center;
+}
+#messageContainer *{
+    padding: 5px;
+}
+#messageContainer p{
+    color: grey;
+}
+#messageContainer form{
+    width: 80%;
+    margin: auto;
+}
+#messageContainer input, textarea{
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid grey;
+    padding-top: 15px;
+}
+#messageContainer .inputContainer{
+    position: relative;
+}
+#messageContainer label {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    color: grey;
+    transition: all 0.2s ease; 
+}
+#messageContainer input:focus + label,
+#messageContainer textarea:focus + label,
+#messageContainer textarea:not(:placeholder-shown) + label,
+#messageContainer input:not(:placeholder-shown) + label {
+    bottom: 30px;
+    font-size: 12px;
+    color: var(--main-color);
+}
+#messageContainer textarea:focus + label,
+#messageContainer textarea:not(:placeholder-shown) + label{
+    bottom: 40px;
+}
+#submitBtn{
+    outline: 0;
+    border: 0;
+    background-color: var(--main-color);
+    margin: 20px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+#submitBtn:hover{
+    background-color: #0056b3;
+}
+#submitBtn:active{
+    background-color: #00438b;
+}
+.logo span, .text{
+    font-size: 1.5em;
+}
+.logo{
+    font-weight: bold;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo .emoji{
+    animation: comeIn 2s ease forwards;
+    transform: translateX(100%);
+}
+@keyframes comeIn{
+    to{
+        transform: translateX(15%);
+    }
+}
+.logo .text{
+    animation: fadeIn 2s linear forwards 2s;
+    opacity: 0;
+    margin-right: 30px;
+}
+@keyframes fadeIn{
+    to{
+        opacity: 1;
+    }
+}
+#cart{
+    font-size: 30px;
+    cursor: pointer;
+    margin: 0 auto 0 10px;
+    transform: scaleX(-1);
+}
+#contactInfo{
+    width: 30%;
+    min-width: 350px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px;
+}
+#contactInfo *{
+    padding: 5px;
+}
+@media (max-width:850px){
+    #hero{
+        padding: 100px 10px;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    #messageContainer{
+        width: 350px;
+    }
+    #contactInfo{
+        width: 350px;
+    }
+}
+footer {
+    color: grey;
+    background-color: black;
+    margin: 0 auto;
+    padding: 50px 30px; 
+}
+#purpose{
+    width: 150px;
+}
+#purpose h3{
+    white-space: nowrap;
+}
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 3rem; 
+    margin: 30px auto;
+    width: 80%;
+    font-size: 1.2rem;
+}
+#footer-copyright {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.footer-ul {
+    list-style-type: none; 
+    padding: 0;
+    text-align: center;
+}
+footer h3 {
+    font-weight: bold; 
+    font-size: 1.5em;
+}
+.footer-list-item{
+    margin-bottom: 5px;
+    color: grey; 
+}
+.footer-list-item:hover{
+    color: white;
+}
+.footer-coupons {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.footer-coupons h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.footer-coupons p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.coupon {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.coupon-code h3 {
+    margin: 0;
+}
+.copy-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.copy-button:hover {
+    background-color: #0056b3;
+}
+@media (max-width:600px){
+    .footer-content{
+        margin: auto;
+    }
+    .footer-content > *{
+        margin: 20px auto;
+    }
+    .footer-coupons{
+        width: 100%;
+    }
+}
+@media (max-width:550px){
+    .footer-content{
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,349 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+:root{
+    --main-color:hsl(200, 100%, 70%);
+    --menu-color:hsla(240, 100%, 50%, 0.5);
+    --cart-menu-color:hsl(200, 100%, 50%);
+}
+header {
+    width: 100%;
+    height: auto;
+    background-color: var(--main-color);
+    padding: 10px 0;
+    box-shadow: 0px 1px 1px hsla(0, 0%, 0%, 0.199);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+@media (max-width:600px){
+    header{
+        padding: 10px;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+}
+.logo span, .text{
+    font-size: 1.5em;
+}
+.logo{
+    font-weight: bold;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+.logo .emoji{
+    animation: comeIn 2s ease forwards;
+    transform: translateX(100%);
+}
+@keyframes comeIn{
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+.logo .text{
+    animation: fadeIn 2s linear forwards 2s;
+    opacity: 0;
+}
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.fa-shopping-cart{
+    transform: scaleX(-1);
+}
+#main-menu{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#main-menu li,a{
+    list-style: none;
+    text-decoration: none;
+    font-weight: bold;
+    white-space: nowrap;
+    color: white;
+    padding: 3px 10px; 
+}
+#main-menu li {
+    position: relative;
+}
+#main-menu li::after {
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: white; 
+    transition: width 0.3s ease; 
+}
+#main-menu li:hover::after {
+    width: 100%;
+}
+main{
+    background-color: var(--main-color);
+    padding: 100px;
+}
+#SignIn{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: white;
+    width: 60%;
+    margin: auto;
+}
+#Register{
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: white;
+    width: 60%;
+    margin: auto;
+}
+#SignIn, #Register{
+    margin: 10px auto;
+}
+#SignIn h1{
+    margin-bottom: 50px;
+}
+#SignIn input:not(.submitBtn){
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid grey;
+    padding-top: 30px;
+}
+#Register h1{
+    margin-bottom: 50px;
+}
+#Register input:not(.submitBtn){
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid grey;
+    padding-top: 30px;
+}
+.submitBtn{
+    outline: 0;
+    border: 0;
+    background-color: var(--main-color);
+    margin: 20px;
+    padding: 10px 15px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+.submitBtn:hover{
+    background-color: #0056b3;
+}
+.submitBtn:active{
+    background-color: #00438b;
+}
+#SignIn .inputContainer{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+#SignIn label {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    color: grey;
+    transition: all 0.2s ease; 
+}
+#SignIn input:focus + label,
+#SignIn input:not(:placeholder-shown) + label {
+    bottom: 30px;
+    font-size: 12px;
+    color: var(--main-color);
+}
+#SignIn p{
+    color: grey;
+    cursor: pointer;
+}
+#SignIn p:hover{
+    text-decoration: underline grey;
+}
+#Register .inputContainer{
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+#Register label {
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    color: grey;
+    transition: all 0.2s ease; 
+}
+#Register input:focus + label,
+#Register input:not(:placeholder-shown) + label {
+    bottom: 30px;
+    font-size: 12px;
+    color: var(--main-color);
+}
+#Register p{
+    color: grey;
+    cursor: pointer;
+}
+#Register p:hover{
+    text-decoration: underline grey;
+}
+#SignIn input:user-valid {
+    border-bottom: 1px solid green;
+}
+#SignIn input:user-invalid {
+    border-bottom: 1px solid red;
+}
+#Register input:user-valid {
+    border-bottom: 1px solid green;
+}
+#Register input:user-invalid {
+    border-bottom: 1px solid red;
+}
+@media (max-width:1024px){
+    #SignIn{
+        width: 80%;
+    }
+    #Register{
+        width: 80%;
+    }
+}
+@media (max-width:700px){
+    main{
+        padding: 50px;
+    }
+    #SignIn{
+        width: 90%;
+    }
+    #Register{
+        width: 90%;
+    }
+}
+@media (max-width:450px){
+    main{
+        padding: 50px 10px;
+    }
+    #SignIn{
+        width: 100%;
+    }
+    #Register{
+        width: 100%;
+    }
+}
+@media (max-width:360px){
+    main{
+        padding: 50px 5px;
+    }
+}
+footer {
+    color: grey;
+    background-color: black;
+    margin: 0 auto;
+    padding: 50px 30px; 
+}
+#purpose{
+    width: 150px;
+}
+#purpose h3{
+    white-space: nowrap;
+}
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 3rem; 
+    margin: 30px auto;
+    width: 80%;
+    font-size: 1.2rem;
+}
+#footer-copyright {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+.footer-ul {
+    list-style-type: none; 
+    padding: 0;
+    text-align: center;
+}
+footer h3 {
+    font-weight: bold; 
+    font-size: 1.5em;
+}
+.footer-list-item{
+    margin-bottom: 5px;
+    color: grey; 
+}
+.footer-list-item:hover{
+    color: white;
+}
+.footer-coupons {
+    max-width: 50%;
+    margin: 0 auto;
+}
+.footer-coupons h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.footer-coupons p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.coupon {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.coupon-code h3 {
+    margin: 0;
+}
+.copy-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.copy-button:hover {
+    background-color: #0056b3;
+}
+@media (max-width:600px){
+    .footer-content{
+        margin: auto;
+    }
+    .footer-content > *{
+        margin: 20px auto;
+    }
+    .footer-coupons{
+        width: 100%;
+    }
+}
+@media (max-width:550px){
+    .footer-content{
+        flex-direction: column;
+    }
+}

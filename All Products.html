@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="All Products.css">
+    <script src="https://kit.fontawesome.com/154e358e66.js" crossorigin="anonymous"></script>
+    <title>Hashim's|E-commerce</title>
+</head>
+<body>
+    <div id="promoLine">
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+    </div>
+    <header>
+        <section id="firstLine">
+            <div class="logo">
+                <span class="emoji"><i class="fa fa-shopping-cart" alt="Cart"></i></span>
+                <p class="text">Hashim's</p>
+            </div> 
+            <div class="search-bar">
+                    <input type="text" name="query" id="searchInput" placeholder="Search..." autocomplete="off">
+                    <button id="search-btn">
+                        <img src="Img/search-icon.png" id="search-icon" alt="Search Icon">
+                    </button>
+            </div>
+            <div id="side-header-items">
+                <i class="fa fa-user"></i>
+                <i class="fa fa-shopping-cart" id="cart" alt="CartBtn"></i><span id="items_num">0</span>
+                <i class="fa fa-bars" alt="Menu Icon" id="menu-icon"></i>
+            </div>
+        </section>
+        <nav>
+            <section id="secondLine">
+                <ul id="main-menu">
+                    <li><a href="Index.html">Home</a></li>
+                    <li><a href="All Products.html" target="_blank">Shop</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </section>
+            <ul id="side-menu">
+                <li>
+                    <i class="fa fa-times" alt="Close Menu Icon" id="cross-menu-icon"></i>
+                </li>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="All Products.html">Shop</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="shoppingCart">
+        <h2>Your Shopping Cart</h2>
+        <div id="listItems">
+        </div>
+        <div class="mainBtns">
+            <button id="closeShoppingCart">Close</button>
+            <button id="CheckOut">Check Out</button>
+        </div>
+    </div>
+    <div id="productAddedPrompt">
+    </div>
+    <section id="hero">
+        <h1>Unleash Possibilities: Shop Our Full Range of Products!</h1>
+    </section>
+    <section class="products">
+        <div id="categoryContainer">
+            <label for="categorySelection">Select A Category:</label>
+        <select name="categorySelection" id="categorySelection">
+            <option value="All">All</option>
+            <option value="Kitchen Appliances">Kitchen Appliances</option>
+            <option value="Cleaning Appliances">Cleaning Appliances</option>
+            <option value="Home Comfort">Home Comfort</option>
+            <option value="Smart Appliances">Smart Appliances</option>
+            <option value="Outdoor Appliances">Outdoor Appliances</option>
+        </select>
+        </div>    
+        <div id="products" class="cards">
+            </div>
+    </section>
+    <div id="pagination">
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div id="purpose">
+                <h3><div class="logo">🛒Hashim's</div></h3>
+                <p><small>Our purpose is to provide home appliances that will fit our customers needs and wants. To make sure our customers leave happily.</small></p>
+            </div>
+            <ul class="footer-ul">
+                <h3 class="Useful-links">Useful links</h3>
+                <li><a href="#" class="footer-list-item">Coupons?</a></li>
+                <li><a href="#" class="footer-list-item">Blog Post</a></li>
+                <li><a href="#" class="footer-list-item">Return Policy</a></li>
+                <li><a href="#" class="footer-list-item">Join Affliate</a></li>
+            </ul>
+            <ul class="footer-ul">
+                <h3 class="Contact-Us">Follow Us</h3>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
+                <li><a href="#" class="footer-list-item"><i class="fa-brands fa-youtube"></i>Youtube</a></li>
+            </ul>
+        </div>
+        <div class="footer-coupons">
+            <h2>Exclusive Coupons</h2>
+            <p>Save on your next purchase with our special offers!</p>
+            <div class="coupon">
+                <div class="coupon-code">
+                    <h3>10% OFF on Your First Order</h3>
+                    <p>Use Code: <strong>WELCOME10</strong></p>
+                </div>
+                <button class="copy-button" onclick="copyCode('WELCOME10')">Copy Code</button>
+            </div>
+            <div class="coupon">
+                <div class="coupon-code">
+                    <h3>$50 OFF on Orders Over $500</h3>
+                    <p>Use Code: <strong>SAVE50</strong></p>
+                </div>
+                <button class="copy-button" onclick="copyCode('SAVE50')">Copy Code</button>
+            </div>
+            <div class="coupon">
+                <div class="coupon-code">
+                    <h3>Free Shipping on Orders Over $100</h3>
+                    <p>No Code Needed!</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer-copyright">
+        <hr>
+        <p id="copyright">Copyright© 2024 🛒Hashim's</p>
+        </div>   
+    </footer>
+    <script src="All Product.js"></script>
+</body>
+</html>

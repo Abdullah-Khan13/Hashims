@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Product.css">
+    <script src="https://kit.fontawesome.com/154e358e66.js" crossorigin="anonymous"></script>
+    <title>Hashim's|E-commerce</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <span class="emoji"><i class="fa fa-shopping-cart" alt="Cart"></i></span>
+            <p class="text">Hashim's</p>
+        </div>
+    <nav>
+            <ul id="main-menu">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="All Products.html" target="_blank">Shop</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+            <ul id="side-menu">
+                <li>
+                    <i class="fa fa-times" alt="Close Menu Icon" id="cross-menu-icon"></i>
+                </li>
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="All Products.html">Shop</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+    </nav>  
+    <div id="side-header-items">
+        <a href="All Products.html"><i class="fa fa-search" id="search-icon"></i></a>
+        <i class="fa fa-user"></i>
+        <i class="fa fa-shopping-cart" id="cart" alt="CartBtn"></i><span id="items_num">0</span>
+        <i class="fa fa-bars" alt="Menu Icon" id="menu-icon"></i>
+    </div>
+</header>
+<div id="shoppingCart">
+    <h2>Your Shopping Cart</h2>
+    <div id="listItems">
+    </div>
+    <div class="mainBtns">
+        <button id="closeShoppingCart">Close</button>
+        <button id="CheckOut">Check Out</button>
+    </div>
+</div>
+<div id="productAddedPrompt">
+</div>
+<main>
+    <main id="MainProduct">
+        <div class="images">
+        <div id="sideImgs"></div>
+        <img src="" alt=""  id="mainImg">
+        </div>
+        <div id="content">
+        </div>
+    </main>
+    <section id="ratingScore">
+        <div id="averageRating">
+            <h3>Average Rating</h3>
+            <h2></h2>
+            <div id="averageRatingContent">
+                <div id="averageTotalRating">
+                    <div id="averageRatingStars"></div>
+                </div>
+                <p id="count">3444</p>
+            </div>
+        </div>
+        <div id="totalScore">
+            <h3>Total Rating</h3>
+            <div id="totalRatingScore">
+                <div class="ratingLine">
+                </div>  
+            </div>
+        </div>
+    </section>
+</main>
+<section id="RelatedProductsContainer">
+    <h2 id="RelatedProductsHeader" class="title">Related Products</h2>
+    <div id="scrollbtns">
+        <button id="scrollLeft">&lt;</button>
+        <button id="scrollRight">&gt;</button>
+    </div>
+    <div id="RelatedProducts"></div>
+</section>
+<section id="CommentSection">
+    <h2 id=" CommentSectionHeader" class="title">Reviews</h2>
+    <div class="comment">
+        <img src="Img/person1.jpg" alt="Profile Image" id="profileImg">
+        <div class="contentContainer">
+            <h3 id="name">John Doe</h3>
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+        </div>
+        <div id="CommentContent">I absolutely love this toaster! It toasts evenly and has a sleek design that fits perfectly in my kitchen. The bagel setting is a game changer. Highly recommend!</div>
+        </div>
+    </div>
+
+    <div class="comment">
+        <img src="Img/person2.jpg" alt="Profile Image" id="profileImg">
+        <div class="contentContainer">
+            <h3 id="name">Michael Johnson</h3>
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+        </div>
+        <div id="CommentContent">Great toaster! It works well for bagels and regular bread. I just wish it had a bit more power for quicker toasting.</div>
+        </div>
+    </div>
+
+    <div class="comment">
+        <img src="Img/person3.jpg" alt="Profile Image" id="profileImg">
+        <div class="contentContainer">
+            <h3 id="name">David Brown</h3>
+        <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+            <i class="far fa-star"></i>
+            <i class="far fa-star"></i>
+        </div>
+        <div id="CommentContent">Decent toaster but it sometimes burns the edges of the bread. I think I need to adjust the settings more carefully.</div>
+        </div>
+    </div>
+
+    <div class="comment">
+        <img src="Img/person4.jpg" alt="Profile Image" id="profileImg">
+        <div class="contentContainer">
+        <h3 id="name">Daniel Wilson</h3> 
+        <div class="rating">
+            <i class="fas fa-star"></i> 
+            <i class="fas fa-star-half-alt"></i> 
+            <i class="far fa-star"></i> 
+            <i class="far fa-star"></i> 
+            <i class="far fa-star"></i> 
+         </div> 
+         <div id="CommentContent">It's okay, but it doesn't toast evenly. Some parts are burnt while others are barely toasted.</div> 
+        </div>
+    </div>
+
+    <div class="comment">
+        <img src="Img/person5.jpg" alt="Profile Image" id="profileImg">
+        <div class="contentContainer">
+            <h3 id="name">Michael Johnson</h3> 
+            <div class="rating">
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star-half-alt"></i> 
+            </div> 
+            <div id="CommentContent">Absolutely love this product! It works perfectly and has made my mornings so much easier.</div> 
+        </div>
+    </div>
+    
+    <div class="comment">
+        <img src="Img/person6.jpg" alt="Profile Image" id="profileImg">
+        <div class="contentContainer">
+            <h3 id="name">James Smith</h3> 
+            <div class="rating">
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="far fa-star"></i> 
+            </div> 
+            <div id="CommentContent">Great performance and design! Just wish it had a few more features, but overall very satisfied.</div> 
+        </div>
+    </div>
+    
+    <div class="comment">
+        <img src="Img/person7.jpg" alt="Profile Image" id="profileImg">
+        <div class="contentContainer">
+            <h3 id="name">David Green</h3> 
+            <div class="rating">
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star"></i> 
+                <i class="fas fa-star-half-alt"></i> 
+                <i class="far fa-star"></i> 
+            </div> 
+            <div id="CommentContent">Very reliable and easy to use. It has exceeded my expectations, but the price could be lower.</div> 
+        </div>
+    </div>
+     
+</section>
+<footer>
+    <div class="footer-content">
+        <div id="purpose">
+            <h3><div class="logo">🛒Hashim's</div></h3>
+            <p><small>Our purpose is to provide home appliances that will fit our customers needs and wants. To make sure our customers leave happily.</small></p>
+        </div>
+        <ul class="footer-ul">
+            <h3 class="Useful-links">Useful links</h3>
+            <li><a href="#" class="footer-list-item">Coupons</a></li>
+            <li><a href="#" class="footer-list-item">Blog Post</a></li>
+            <li><a href="#" class="footer-list-item">Return Policy</a></li>
+            <li><a href="#" class="footer-list-item">Join Affliate</a></li>
+        </ul>
+        <ul class="footer-ul">
+            <h3 class="Contact-Us">Follow Us</h3>
+            <li><a href="#" class="footer-list-item"><i class="fa-brands fa-instagram"></i>Instagram</a></li>
+            <li><a href="#" class="footer-list-item"><i class="fa-brands fa-facebook"></i>Facebook</a></li>
+            <li><a href="#" class="footer-list-item"><i class="fa-brands fa-twitter"></i>Twitter</a></li>
+            <li><a href="#" class="footer-list-item"><i class="fa-brands fa-youtube"></i>Youtube</a></li>
+        </ul>
+
+    </div>
+    <div id="footer-copyright">
+    <hr>
+    <p id="copyright">Copyright© 2024 🛒Hashim's</p>
+    </div>   
+</footer>
+<script src="Product.js"></script>
+</body>
+</html>
