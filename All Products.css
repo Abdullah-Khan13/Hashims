@@ -240,6 +240,7 @@ header {
 }
 #shoppingCart h2{
     font-size: 1.2rem;
+    white-space: nowrap;
 }
 @media (max-width:880px){
     #secondLine{
