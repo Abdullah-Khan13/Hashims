@@ -253,6 +253,8 @@ header > *{
 #shoppingCart h2{
     padding: 20px;
     background-color: var(--cart-menu-color);
+    font-size: 1.2rem;
+    white-space: nowrap;
 }
 .plus, .minus{
     border-radius: 50%;
@@ -350,6 +352,7 @@ header > *{
 @media (max-width:650px){
     .hero{
         font-size: 1.1em;
+        background-image: url("Img/hero_2bg.jpg");
     }
 }
 .title{
