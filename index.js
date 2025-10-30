@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cartMenuOpen.addEventListener("click", () => {
         console.log("Cart icon clicked");
-        cartMenuOpen.style.color = "white";
         shoppingCart.style.right = "0"; // Open cart
     });
 
@@ -243,3 +242,4 @@ function renderRatings(product) {
 
     return stars;
 }
+
