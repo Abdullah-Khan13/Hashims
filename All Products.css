@@ -375,17 +375,13 @@ header {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    font-size: 1.3rem;
+    font-size: 1rem;
 }
 #hero h1{
     border-bottom: 5px solid var(--main-color);
     border-radius: 5px;
     margin: auto 10px;
-}
-@media (max-width:650px){
-    #hero{
-        font-size: 1.1em;
-    }
+    width: 80%;
 }
 #categoryContainer{
     margin: auto;
