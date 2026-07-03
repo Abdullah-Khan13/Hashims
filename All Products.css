@@ -494,6 +494,7 @@ header {
     margin: 10px 5px;
     border-radius: 50%;
     background-color: white;
+    cursor: pointer;
 }
 .pagebtn.active{
     background-color: black;
