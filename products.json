@@ -12,8 +12,8 @@
         "link": "Product1.html",
         "sideImages": [
             "Img/toaster.jpg",
-            "Img/toaster2.jpg",
-            "Img/Toaster3.jpg",
+            "Img/Toaster2.jpg",
+            "Img/toaster3.jpg",
             "Img/Toaster5.png"
         ]
     },
@@ -139,7 +139,7 @@
 {
     "id": 14,
     "name": "Slow Cooker",
-    "image": "Img/Slow Cooker.jpg",
+    "image": "Img/Slow cooker.jpg",
     "previous_price": 80,
     "final_price": 60,
     "rating": 5,
