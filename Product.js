@@ -50,14 +50,12 @@ function initApp() {
             itemlist = data;
             mainData = itemlist.find(value => value.id == product_id);
             
-            if(mainData){
+            if (mainData) {
                 addMainDataToHtml();
                 addRelatedDataToHtml();
             } else {
                 console.error("Product Not Found.");
             }
-            
-            // Safely load cart ONLY after itemlist data is fully available
             loadCart();
         })
         .catch(error => console.error('Error fetching products:', error));
@@ -70,32 +68,27 @@ function addMainDataToHtml() {
     mainImg.src = mainData.image;
     let sideImages = document.getElementById('sideImgs');
     
-    if(Array.isArray(mainData.sideImages) && mainData.sideImages.length > 0){
+    if (Array.isArray(mainData.sideImages) && mainData.sideImages.length > 0) {
+        sideImages.innerHTML = '';
         mainData.sideImages.forEach(img => {
             let sideImg = document.createElement('img');
             sideImg.src = img;
             sideImg.classList.add('sideimg');
             sideImg.setAttribute("tabindex", "0");
-            sideImg.onerror = () => {
-                sideImages.style.display = "none";
-            };
+            sideImg.onerror = () => sideImg.remove(); 
             sideImages.appendChild(sideImg);   
         });
         
         sideImages.addEventListener("click", (event) => {
             if (event.target.tagName === 'IMG') { 
                 mainImg.src = event.target.src;
-                let allSideImgs = document.querySelectorAll('.sideimg');
-                allSideImgs.forEach(img => {
-                    img.classList.remove('highlight');
-                });
+                document.querySelectorAll('.sideimg').forEach(img => img.classList.remove('highlight'));
                 event.target.classList.add('highlight');
                 event.target.focus();
             }
         });
     }
     
-    // Product Content
     let content = document.getElementById('content');
     content.innerHTML = `
         <h2 id="productName">${mainData.name}</h2>
@@ -108,18 +101,13 @@ function addMainDataToHtml() {
         <button class="btn2" id="mainAddToCart" data-id="${mainData.id}">Add to Cart</button>
         <button class="btn2" id="mainCheckOut">Check Out</button>`;
         
-    const mainDataAddToCart = document.getElementById("mainAddToCart");
-    mainDataAddToCart.addEventListener("click", () => {
-        addToCart(mainData.id);
-    });
+    document.getElementById("mainAddToCart").addEventListener("click", () => addToCart(mainData.id));
 }
 
+/* Render Related Products */
 function addRelatedDataToHtml() {
     relatedItemlistHtml.innerHTML = ''; 
-    const mainProductCategory = mainData.category; 
-    const RelatedProducts = itemlist.filter(product => {
-        return product.category == mainProductCategory && product.id !== mainData.id;
-    });
+    const RelatedProducts = itemlist.filter(product => product.category == mainData.category && product.id !== mainData.id);
     const totalRelatedProducts = RelatedProducts.slice(0, 9);
     
     if (totalRelatedProducts.length > 0) {
@@ -140,12 +128,13 @@ function addRelatedDataToHtml() {
                 <button class="btn2 addToCart">Add to Cart</button>`;
             relatedItemlistHtml.appendChild(newProduct);
         });
-        scrollFunction();
+        if (typeof scrollFunction === "function") scrollFunction();
     } else {
         relatedItemlistHtml.innerHTML = '<p>No products available.</p>';
     }
 }
 
+/* Load Cart From Memory */
 function loadCart() {
     const storedCart = localStorage.getItem('item');
     if (storedCart) {
@@ -154,22 +143,18 @@ function loadCart() {
     }
 }
 
-// Intercept clicks on the related products matching index/all-products layout rules
+/* Related Products Click Actions */
 relatedItemlistHtml.addEventListener("click", (event) => {
-    let positionClick = event.target;
-    let card = positionClick.closest('.card');
-    
+    let card = event.target.closest('.card');
     if (!card) return;
 
-    if (positionClick.classList.contains("addToCart")) {
-        let product_id = card.dataset.id;
-        addToCart(product_id);
+    if (event.target.classList.contains("addToCart")) {
+        addToCart(card.dataset.id);
         return;
     }
 
     event.preventDefault();
-    let product_id = card.dataset.id;
-    window.location.href = `product.html?id=${product_id}`;
+    window.location.href = `product.html?id=${card.dataset.id}`;
 });
 
 function addToCart(product_id) {
@@ -178,15 +163,12 @@ function addToCart(product_id) {
     if (positionProductInCart >= 0) {
         cart[positionProductInCart].quantity++;
     } else {
-        cart.push({
-            product_id: product_id,
-            quantity: 1
-        });
+        cart.push({ product_id: product_id, quantity: 1 });
     }
 
     addItemsCartHtml();
     addCartToMemory();
-    showNotification(product_id);
+    if (typeof showNotification === "function") showNotification(product_id);
 }
 
 const addCartToMemory = () => {
@@ -197,30 +179,26 @@ function addItemsCartHtml() {
     listCart.innerHTML = '';
     let totalQuantity = 0;
 
-    if (cart.length > 0) {
-        cart.forEach(item => {
+    cart.forEach(item => {
+        let itemInfoCart = itemlist.find(product => product.id == item.product_id);
+        if (itemInfoCart) {
             totalQuantity += item.quantity;
-            let itemInfoCart = itemlist.find(product => product.id == item.product_id);
-
-            // Added safety guard to prevent undefined data execution crashes
-            if (itemInfoCart) {
-                let newItem = document.createElement('div');
-                newItem.classList.add('item');
-                newItem.dataset.id = item.product_id;
-                newItem.innerHTML = `
-                    <div class="image"><img src="${itemInfoCart.image}" alt=""></div>
-                    <div class="name">${itemInfoCart.name}</div>
-                    <div class="totalPrice">$${(itemInfoCart.final_price * item.quantity).toFixed(2)}</div>
-                    <div class="quantity" data-id="${item.product_id}">
-                        <span><i class="fas fa-trash-alt remove"></i></span>
-                        <span class="minus quantitybtn">&lt;</span>
-                        <span id="quantity">${item.quantity}</span>
-                        <span class="plus quantitybtn">&gt;</span>
-                    </div>`;
-                listCart.appendChild(newItem);
-            }
-        });
-    }
+            let newItem = document.createElement('div');
+            newItem.classList.add('item');
+            newItem.dataset.id = item.product_id;
+            newItem.innerHTML = `
+                <div class="image"><img src="${itemInfoCart.image}" alt=""></div>
+                <div class="name">${itemInfoCart.name}</div>
+                <div class="totalPrice">$${(itemInfoCart.final_price * item.quantity).toFixed(2)}</div>
+                <div class="quantity" data-id="${item.product_id}">
+                    <span><i class="fas fa-trash-alt remove"></i></span>
+                    <span class="minus quantitybtn">&lt;</span>
+                    <span id="quantity">${item.quantity}</span>
+                    <span class="plus quantitybtn">&gt;</span>
+                </div>`;
+            listCart.appendChild(newItem);
+        }
+    });
     items_num.innerText = totalQuantity;
 }
 
