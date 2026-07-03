@@ -239,8 +239,12 @@ header > *{
     color: red;
 }
 .mainBtns{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
 }
 .mainBtns button{
     outline: 0;
@@ -337,17 +341,20 @@ header > *{
     border: 3px dotted blue;
 }
 #content {
-    width: 460px;
+    max-width: 460px; 
+    width: 100%;
     min-width: 300px;
     font-size: 1.5em;
+    box-sizing: border-box;
 }
 #content > *{
     padding: 20px 30px;
 }
 #content #mainAddToCart, #mainCheckOut{
-    display: inline-block;
+    display: block;
     box-shadow: -3px 3px 1px hsla(0, 0%, 0%, 0.527);
     width: 180px;
+    max-width: 100%;
 }
 #mainCheckOut{
     background-color: var(--main-color);
@@ -364,56 +371,69 @@ header > *{
     background-color: var(--main-color);
     color: white;
 }
+
 @media (max-width:1100px) and (min-width:900px){
     #content{
         height: 100%;
         width: 100%;
+        max-width: 100%;
     }
     #MainProduct{
+        grid-template-columns: repeat(2, 1fr); 
         width: 90%;
-        margin: 10px 10px;
+        margin: 10px auto;
     }
 }
+
 @media (max-width:900px){
     #MainProduct{
+        grid-template-columns: 1fr; 
         grid-template-rows: auto auto;
-        width: 80%;
+        width: 90%; 
         margin: 10px auto;
     }
     #mainImg{
-        height: 250px;
-        width: 250px;
+        height: 60%;
+        width: 60%;
     }
     .images{
-        width: 100%;
+        width: 80%;
+        margin: auto;
     }
     #content{
         width: 100%;
+        max-width: 100%;
         grid-column: 1 / -1;
     }
     #MainProduct button{
-        margin: 5px 20px 5px 0;
+        margin: 10px 0;
         white-space: nowrap;
     }
 }
-@media (min-width:360px) and (max-width:600px){
+
+@media (max-width:600px){ 
     #MainProduct{
         width: 100%;
-        margin: auto;
     }
     .images{
         width: 100%;
+        margin: auto;
     }
     #content{
-        width: 100%;
+        width: 90%;
+        font-size: 1.3em; 
+    }
+    #content > * {
+        padding: 10px 15px; 
     }
     #MainProduct button{
         display: block;
-        margin: 5px 20px 5px 0;
+        margin: 10px auto;
         white-space: nowrap;
         font-size: 20px;
     }
 }
+
 .fa-star, .fa-star-half-alt{
     color: gold;
 }
@@ -682,10 +702,18 @@ header > *{
     font-size: 1.1em;
     background-color: var(--cart-menu-color);
 }
-@media (max-width:600px){
+@media (max-width:900px){
+    #CommentSectionHeader{
+        margin-left: 5%;
+    }
+    #CommentSection{
+        margin: 10px 0;
+    }
     .comment{
         flex-direction: column;
-    }
+        width: 90%;
+        margin: 10px auto;
+    }   
 }
 .title{
     margin: 30px 0;

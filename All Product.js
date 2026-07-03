@@ -160,14 +160,23 @@ function loadCart() {
     }
 }
 
-// Call loadCart on page load
 window.onload = loadCart;
 
 addItemsHtml.addEventListener("click", (e) => {
-    if(e.target.classList.contains("addToCart")){
-        let product_id = e.target.parentElement.dataset.id;
+    let positionClick = e.target;
+    let card = positionClick.closest('.card');
+    
+    if (!card) return;
+
+    if(positionClick.classList.contains("addToCart")){
+        let product_id = card.dataset.id;
         addToCart(product_id);
+        return;
     }
+
+    e.preventDefault();
+    let product_id = card.dataset.id;
+    window.location.href = `product.html?id=${product_id}`;
 })
 
 function addToCart(product_id){
@@ -233,19 +242,27 @@ function showNotification(product_id){
 
 addItemsCartHtml.addEventListener("click", (event) => {
     if (event.target.classList.contains("remove")) {
-        let product_id = event.target.parentElement.dataset.id;
-        let productPosition = cart.findIndex((value) => value.product_id == product_id);
-        cart.splice(productPosition,1);
-        addToCartHtml();
-        addDataToMemory();
+        let quantityContainer = event.target.closest('.quantity');
+        if (quantityContainer) {
+            let product_id = quantityContainer.dataset.id;
+            let productPosition = cart.findIndex((value) => value.product_id == product_id);
+            if (productPosition >= 0) {
+                cart.splice(productPosition, 1);
+                addToCartHtml();
+                addDataToMemory();
+            }
+        }
     }
 });
 
 addItemsCartHtml.addEventListener("click", (e) => {
     if(e.target.classList.contains("minus") || e.target.classList.contains("plus")){
-        let product_id = e.target.parentElement.dataset.id;
-        let type = e.target.classList.contains("plus")? "plus":"minus";
-        changeQuantity(type, product_id);
+        let quantityContainer = e.target.closest('.quantity');
+        if (quantityContainer) {
+            let product_id = quantityContainer.dataset.id;
+            let type = e.target.classList.contains("plus")? "plus":"minus";
+            changeQuantity(type, product_id);
+        }
     }
 })
 
@@ -280,9 +297,8 @@ function fetchProductPage() {
 }
 
 function getProductPageLink(productid) {
-    return `Product.html?id=${productid}`;
+    return `product.html?id=${productid}`;
 }
-
 //search functionality
 let searchInput = document.getElementById('searchInput');
 let keywords = [];
