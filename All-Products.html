@@ -3,69 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="account.css">
+    <link rel="stylesheet" href="All Products.css">
     <script src="https://kit.fontawesome.com/154e358e66.js" crossorigin="anonymous"></script>
     <title>Hashim's|E-commerce</title>
 </head>
 <body>
+    <div id="promoLine">
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+        <h3>25% off on all Products, Special Deal For Today Only!</h3>
+    </div>
     <header>
-        <div class="logo">
-            <span class="emoji"><i class="fa fa-shopping-cart" alt="Cart"></i></span>
-            <p class="text">Hashim's</p>
-        </div>
+        <section id="firstLine">
+            <div class="logo">
+                <span class="emoji"><i class="fa fa-shopping-cart" alt="Cart"></i></span>
+                <p class="text">Hashim's</p>
+            </div> 
+            <div class="search-bar">
+                    <input type="text" name="query" id="searchInput" placeholder="Search..." autocomplete="off">
+                    <button id="search-btn">
+                        <img src="Img/search-icon.png" id="search-icon" alt="Search Icon">
+                    </button>
+            </div>
+            <div id="side-header-items">
+                <i class="fa fa-user"></i>
+                <i class="fa fa-shopping-cart" id="cart" alt="CartBtn"></i><span id="items_num">0</span>
+                <i class="fa fa-bars" alt="Menu Icon" id="menu-icon"></i>
+            </div>
+        </section>
         <nav>
-            <ul id="main-menu">
+            <section id="secondLine">
+                <ul id="main-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="All-products.html" target="_blank">Shop</a></li>
                     <li><a href="About Us.html">About Us</a></li>
                     <li><a href="Contact.html">Contact</a></li>
+                </ul>
+            </section>
+            <ul id="side-menu">
+                <li>
+                    <i class="fa fa-times" alt="Close Menu Icon" id="cross-menu-icon"></i>
+                </li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="All-products.html">Shop</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+                <li><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <form action="" method="post" id="SignIn">
-            <h1>Sign In</h1>
-            <div class="inputContainer">
-                <input type="text" name="name" id="name" placeholder=" " required>
-                <label for="name">Your Username</label>
+    <div id="shoppingCart">
+        <h2>Your Shopping Cart</h2>
+        <div id="listItems">
+        </div>
+        <div class="mainBtns">
+            <button id="closeShoppingCart">Close</button>
+            <button id="CheckOut">Check Out</button>
+        </div>
+    </div>
+    <div id="productAddedPrompt">
+    </div>
+    <section id="hero">
+        <h1>Unleash Possibilities: Shop Our Full Range of Products!</h1>
+    </section>
+    <section class="products">
+        <div id="categoryContainer">
+            <label for="categorySelection">Select A Category:</label>
+        <select name="categorySelection" id="categorySelection">
+            <option value="All">All</option>
+            <option value="Kitchen Appliances">Kitchen Appliances</option>
+            <option value="Cleaning Appliances">Cleaning Appliances</option>
+            <option value="Home Comfort">Home Comfort</option>
+            <option value="Smart Appliances">Smart Appliances</option>
+            <option value="Outdoor Appliances">Outdoor Appliances</option>
+        </select>
+        </div>    
+        <div id="products" class="cards">
             </div>
-            <div class="inputContainer">
-                <input type="email" name="email" id="email" placeholder=" " required>
-                <label for="email">Email Address</label>
-            </div>
-            <div class="inputContainer">
-                <input type="password" name="Pword" id="Pword" placeholder=" " required>
-                <label for="Pword">Password</label>
-            </div>
-            <input type="submit" value="Sign In" class="submitBtn">
-            <p>Don't have an account?</p>
-        </form>
-        <form action="" method="post" id="Register">
-            <h1>Register</h1>
-            <div class="inputContainer">
-                <input type="text" name="fname" id="fname" placeholder=" " required>
-                <label for="fname">First Name</label>
-            </div>
-            <div class="inputContainer">
-                <input type="text" name="lname" id="lname" placeholder=" " required>
-                <label for="lname">Last Name</label>
-            </div>
-            <div class="inputContainer">
-                <input type="email" name="email" id="email" placeholder=" " required>
-                <label for="email">Email Address</label>
-            </div>
-            <div class="inputContainer">
-                <input type="password" name="Pword" id="Pword" placeholder=" " required>
-                <label for="Pword">Create Password</label>
-            </div>
-            <input type="submit" value="Register" class="submitBtn">
-            <p>Already made an account?</p>
-        </form>
-    </main>
+    </section>
+    <div id="pagination">
+    </div>
     <footer>
         <div class="footer-content">
             <div id="purpose">
-                <h3><span class="logo">🛒Hashim's</span></h3>
+                <h3><div class="logo">🛒Hashim's</div></h3>
                 <p><small>Our purpose is to provide home appliances that will fit our customers needs and wants. To make sure our customers leave happily.</small></p>
             </div>
             <ul class="footer-ul">
@@ -112,19 +134,6 @@
         <p id="copyright">Copyright© 2024 🛒Hashim's</p>
         </div>   
     </footer>
-    <script>
-        const registerFormGetter = document.querySelector("#SignIn p");
-        const signInFormGetter = document.querySelector("#Register p");
-        const signInForm = document.getElementById("SignIn");
-        const registerForm = document.getElementById("Register");
-        registerFormGetter.addEventListener("click", () => {
-            signInForm.style.display = "none";
-            registerForm.style.display = "flex";
-        });
-        signInFormGetter.addEventListener("click", () => {
-            registerForm.style.display = "none";
-            signInForm.style.display = "flex";
-        });
-    </script>
+    <script src="All Product.js"></script>
 </body>
 </html>
